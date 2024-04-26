@@ -21,16 +21,20 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 
   const handleSearch = async () => {
     if (search) {
-      const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions)
+      const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
       console.log(exercisesData)
-      const searchExercises = exercisesData.filter(
-        (exercise) => exercise.name.toLowerCase().includes(search)
-          || exercise.target.toLowerCase().includes(search)
-          || exercise.equipment.toLowerCase().includes(search)
-          || exercise.bodyPart.toLowerCase().includes(search)
+      const searchedExercises = exercisesData.filter(
+        (item) =>
+          item.name.toLowerCase().includes(search) ||
+          item.target.toLowerCase().includes(search) ||
+          item.equipment.toLowerCase().includes(search) ||
+          item.bodyPart.toLowerCase().includes(search),
       )
-      setSearch('')
-      setExercises(searchExercises)
+      console.log(searchedExercises)
+      window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' })
+
+      setSearch('');
+      setExercises(searchedExercises)
     }
   }
   return (
@@ -50,16 +54,11 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
       </Typography>
       <Box position='relative' mb='72px'>
         <TextField
-          sx={{
-            input: { fontWeight: '700', border: 'none', borderRadius: '4px' },
-            width: { lg: '800px', xs: '350px' },
-            backgroundColor: '#fff',
-            borderRadius: '40px'
-          }}
-          height='76px'
+          height="76px"
+          sx={{ input: { fontWeight: '700', border: 'none', borderRadius: '4px' }, width: { lg: '1170px', xs: '350px' }, backgroundColor: '#fff', borderRadius: '40px' }}
           value={search}
           onChange={(e) => setSearch(e.target.value.toLowerCase())}
-          type='text'
+          type="text"
           placeholder='Search Exercises...'
         />
         <Button
