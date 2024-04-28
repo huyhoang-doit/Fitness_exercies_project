@@ -20,7 +20,7 @@ const Navbar = () => {
         justifyContent: 'none'
       }} px='20px'
     >
-      <Link>
+      <Link to='/'>
         <img src={Logo} alt="Logo" style={{ width: '76px', height: '76px', margin: '0 20px' }} />
       </Link>
       <Stack

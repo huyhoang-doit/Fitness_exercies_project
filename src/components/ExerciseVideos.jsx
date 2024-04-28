@@ -1,14 +1,11 @@
 import React from 'react'
 import { Typography, Stack, Box } from '@mui/material'
+import Loader from './Loader'
 
 
 const ExerciseVideos = ({ exerciseVideos, name }) => {
   if (!exerciseVideos.length) {
-    return (
-      <Typography variant='h6' textAlign='center'>
-        Loading...
-      </Typography>
-    )
+    return <Loader />
   }
 
   return (
