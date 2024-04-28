@@ -4,6 +4,12 @@ import { Stack } from '@mui/material'
 import Logo from '../assets/images/Logo.png'
 
 const Navbar = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <Stack
       direction='row'
@@ -24,7 +30,7 @@ const Navbar = () => {
         alignItems='center'
       >
         <Link to='/' style={{ textDecoration: 'none', color: '#3A1212', borderBottom: '3px solid #FF2625' }}>Home</Link>
-        <a href="#exercises" style={{ textDecoration: 'none', color: '#3A1212' }}>
+        <a onClick={() => scrollToSection('exercises')} style={{ textDecoration: 'none', color: '#3A1212', cursor: 'pointer' }} behavior='smooth'>
           Exercises
         </a>
       </Stack>
