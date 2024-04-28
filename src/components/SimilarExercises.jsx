@@ -6,7 +6,7 @@ import Loader from './Loader'
 
 const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => {
   return (
-    <Box sx={{ mt: { lg: '100px', xs: '0' } }}>
+    <Box sx={{ mt: { lg: '100px', xs: '0' } }} p="20px">
       <Typography sx={{ fontSize: { lg: '44px', xs: '25px' } }} fontWeight={700} color="#000" mb="33px">
         Exercises that target the same <span style={{ color: '#FF2625', textTransform: 'capitalize' }}>muscle</span> group
       </Typography>
