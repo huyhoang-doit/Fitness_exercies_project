@@ -9,7 +9,7 @@ const Navbar = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+  }
   return (
     <Stack
       direction='row'

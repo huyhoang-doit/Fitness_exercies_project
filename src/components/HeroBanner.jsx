@@ -3,6 +3,12 @@ import { Box, Stack, Typography, Button } from '@mui/material'
 import HeroBannerImage from '../assets/images/banner.png'
 
 const HeroBanner = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   return (
     <Box sx={{
       mt: { lg: '112px', xs: '70px' },
@@ -24,9 +30,9 @@ const HeroBanner = () => {
       <Button
         variant="contained"
         color="error"
-        href="#exerices"
         sx={{ backgroundColor: '#ff2625', pading: '10px' }
         }
+        onClick={() => scrollToSection('exercises')}
       >
         Explore Exercises
       </Button>
